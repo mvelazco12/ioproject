@@ -1,9 +1,9 @@
-Modelo de Optimización de Asignación de Turnos – Streamlit + PuLP
+Modelo de Optimización de Asignación de Turnos 
 
-Este proyecto implementa un modelo de programación lineal entera binaria para la asignación óptima de turnos de enfermeras, basado en la estructura presentada en Yilmaz (2012).
-La aplicación está construida con Streamlit para la interfaz y PuLP (CBC) como solver de optimización.
+Este proyecto implementa un modelo de programación lineal entera binaria para la asignación óptima de turnos de enfermeras.
+La aplicación está construida con Streamlit para la interfaz y PuLP  como solver de optimización.
 
- Características principales
+ - Características principales
 
 Optimización de turnos para 50+ enfermeras.
 
@@ -23,9 +23,7 @@ Matriz de resultados dinámica.
 
 Heatmap visual.
 
-Descarga en CSV.
-
-Cálculo automático de:
+- Cálculo automático de:
 
 turnos asignados,
 
@@ -33,161 +31,13 @@ horas trabajadas,
 
 número total de variables binarias del modelo.
 
-📦 Requisitos
+- Requisitos
 pip install streamlit pandas pulp numpy
 
-▶️ Cómo ejecutar la aplicación
-streamlit run app.py
+- Cómo ejecutar la aplicación
+streamlit run otroproject.py
 
 
-Donde app.py es el archivo que contiene el código mostrado.
-
-🧠 Descripción del modelo matemático
-Variables
-
-
-si la enfermera i trabaja el turno j
-en otro caso
-	​
-
-
-Variables:
-
-
-TN×turns
-
-Ejemplo: 50 enfermeras × 42 turnos = 2100 variables binarias.
-
-Función Objetivo
-
-Minimizamos:
-
-𝑍
-=
-𝑊
-𝐻
-⋅
-𝑇
-𝑁
-−
-ℎ
-∑
-𝑖
-,
-𝑗
-𝑥
-𝑖
-𝑗
-Z=WH⋅TN−h
-i,j
-∑
-	​
-
-x
-ij
-	​
-
-
-Equivalente a maximizar la cantidad de turnos asignados, sin violar restricciones.
-
-Restricciones
-
-Horas máximas por enfermera
-
-ℎ
-∑
-𝑗
-𝑥
-𝑖
-𝑗
-≤
-𝑊
-𝐻
-h
-j
-∑
-	​
-
-x
-ij
-	​
-
-≤WH
-
-Ventana de descanso (3 turnos)
-
-𝑥
-𝑖
-,
-𝑗
-+
-𝑥
-𝑖
-,
-𝑗
-+
-1
-+
-𝑥
-𝑖
-,
-𝑗
-+
-2
-≤
-1
-x
-i,j
-	​
-
-+x
-i,j+1
-	​
-
-+x
-i,j+2
-	​
-
-≤1
-
-Mínimo y máximo de personal por turno
-
-𝑁
-𝑗
-_
-𝑚
-𝑖
-𝑛
-[
-𝑗
-]
-≤
-∑
-𝑖
-𝑥
-𝑖
-𝑗
-≤
-𝑁
-𝑗
-_
-𝑚
-𝑎
-𝑥
-[
-𝑗
-]
-Nj_min[j]≤
-i
-∑
-	​
-
-x
-ij
-	​
-
-≤Nj_max[j]
-🖥️ Interfaz
 
 La aplicación cuenta con:
 
@@ -197,15 +47,13 @@ Matriz de asignaciones.
 
 Heatmap visual.
 
-Descarga en CSV.
-
 Métricas automáticas.
 
  Salida
 
 
 
-Métricas del modelo:
+- Métricas del modelo:
 
 Horas totales trabajadas.
 
@@ -213,7 +61,7 @@ Número de turnos asignados.
 
 Número de variables binarias creadas.
 
-Tecnologías usadas
+- Tecnologías usadas: 
 
 Python
 
